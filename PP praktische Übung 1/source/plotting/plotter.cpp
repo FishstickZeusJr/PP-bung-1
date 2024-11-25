@@ -1,7 +1,8 @@
 #include "plotting/plotter.h"
 #include "io/image_parser.h"
-
+#include <cstdint>
 #include <exception>
+using namespace std;
 
 void Plotter::write_and_clear(){
     // create plot serial number string
@@ -16,6 +17,15 @@ void Plotter::write_and_clear(){
     image_serial_number += 1;
 }
 
-BitmapImage::BitmapPixel Plotter::get_pixel(std::uint32_t x, std::uint32_t y){
+BitmapImage::BitmapPixel Plotter::get_pixel(uint32_t x, uint32_t y){
     return image.get_pixel(y, x);
 }
+
+BitmapImage::BitmapPixel Plotter::mark_pixel(uint32_t x, uint32_t y, uint8_t red, uint8_t green, uint8_t blue){
+    //check if the marked pixel is in the field
+    
+    return image.mark_pixel(x, y, red, green, blue);
+}
+
+
+

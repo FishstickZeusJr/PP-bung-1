@@ -1,4 +1,5 @@
 #pragma once
+
 #include "structures/bounding_box.h"
 #include "image/bitmap_image.h"
 #include "image/pixel.h"
@@ -7,6 +8,7 @@
 #include <set>
 #include <filesystem>
 #include "structures/vector2d.h"
+
 
 class Plotter{
 public:
