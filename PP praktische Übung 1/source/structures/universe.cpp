@@ -1,4 +1,5 @@
 #include "universe.h"
+#include <cmath>
 
 Universe::Universe(std::uint32_t numbodies, std::uint32_t current_simulation_epoch)
 	: numbodies{ numbodies }
@@ -32,4 +33,9 @@ BoundingBox Universe::get_bounding_box()
 	}
 
 	return BoundingBox{ x_min, x_max, y_min, y_max };
+}
+
+double Universe::getDistance(Vector2d<double> pos1, Vector2d<double> pos2)
+{
+	return hypot(pos1[0] - pos2[0], pos1[1] - pos2[1]);
 }
